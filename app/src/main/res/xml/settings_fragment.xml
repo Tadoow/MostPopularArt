@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Настройки отображения">
+        <ListPreference
+            android:defaultValue="@string/default_columns_count"
+            android:dialogTitle="Выберите число столбцов"
+            android:entries="@array/columns_count"
+            android:entryValues="@array/columns_count"
+            android:key="@string/columns_count"
+            android:summary="Устанавливает число столбцов для отображения художественных работ"
+            android:title="Экран художественных работ" />
+
+        <ListPreference
+            android:defaultValue="@string/default_rows_count"
+            android:dialogTitle="Выберите число авторов"
+            android:entries="@array/rows_count"
+            android:entryValues="@array/rows_count"
+            android:summary="Устанавливает число авторов, отображаемых на экране"
+            android:title="Количество авторов"
+            app:key="@string/rows_count" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Системные настройки">
+        <PreferenceScreen
+            android:summary="Очистка кэша, разрешения, сеть"
+            android:title="О приложении">
+            <intent
+                android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
+                android:data="package:com.example.myapplication" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>
